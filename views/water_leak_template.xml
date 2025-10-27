@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="technician_leaks_page" name="Page Technicien - Fuites">
+    <t t-call="website.layout">
+      <div class="container mt16">
+        <h1>Déclarations de fuites</h1>
+        <t t-if="not request.env.user.has_group('odoo19_fuites.group_technician')">
+          <div class="alert alert-danger">Accès réservé aux techniciens.</div>
+        </t>
+        <t t-else="">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Source</th>
+                <th>Type</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Photo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <t t-foreach="request.env['odoo19.fuites'].sudo().search([])" t-as="leak">
+                <tr>
+                  <td><t t-esc="leak.name"/></td>
+                  <td><t t-esc="leak.source"/></td>
+                  <td><t t-esc="dict(leak._fields['leak_type'].selection).get(leak.leak_type)"/></td>
+                  <td><t t-esc="leak.report_datetime"/></td>
+                  <td><t t-esc="leak.address"/></td>
+                   <td><t t-esc="leak.photo"/></td>
+                </tr>
+              </t>
+            </tbody>
+          </table>
+        </t>
+      </div>
+    </t>
+  </template>
+</odoo>

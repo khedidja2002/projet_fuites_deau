@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <record id="view_form_water_leak" model="ir.ui.view">
+    <field name="name">odoo19.fuites.form</field>
+    <field name="model">odoo19.fuites</field>
+    <field name="arch" type="xml">
+      <form string="Déclaration de fuite">
+        <group>
+          <field name="source"/>
+          <field name="report_datetime"/>
+          <field name="leak_type"/>
+          <field name="address"/>
+          <field name="photo"/>
+        </group>
+      </form>
+    </field>
+  </record>
+
+  <record id="view_tree_water_leak" model="ir.ui.view">
+    <field name="name">odoo19.fuites.list</field>
+    <field name="model">odoo19.fuites</field>
+    <field name="arch" type="xml">
+      <list string="Fuites d’eau">
+        <field name="report_datetime"/>
+        <field name="leak_type"/>
+        <field name="address"/>
+      </list>
+    </field>
+  </record>
+
+  <record id="action_water_leak" model="ir.actions.act_window">
+    <field name="name">Fuites d’eau</field>
+    <field name="res_model">odoo19.fuites</field>
+    <field name="view_mode">list,form</field>
+  </record>
+
+  <menuitem id="menu_water_leak_root" name="Fuites d’eau" groups="odoo19_fuites.group_operator,odoo19_fuites.group_technician"/>
+  <menuitem id="menu_water_leak" name="Déclarations" parent="menu_water_leak_root" action="action_water_leak" groups="odoo19_fuites.group_operator,odoo19_fuites.group_technician"/>
+</odoo>
