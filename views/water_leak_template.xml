@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
   <template id="technician_leaks_page" name="Page Technicien - Fuites">
+
     <t t-call="website.layout">
       <div class="container mt16">
         <h1>Déclarations de fuites</h1>
@@ -19,9 +20,8 @@
               </tr>
             </thead>
             <tbody>
-              <t t-foreach="request.env['odoo19.fuites'].sudo().search([])" t-as="leak">
+              <t t-foreach="leaks" t-as="leak">
                 <tr>
-                  <td><t t-esc="leak.name"/></td>
                   <td><t t-esc="leak.source"/></td>
                   <td><t t-esc="dict(leak._fields['leak_type'].selection).get(leak.leak_type)"/></td>
                   <td><t t-esc="leak.report_datetime"/></td>

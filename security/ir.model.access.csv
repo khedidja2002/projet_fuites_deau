@@ -1,3 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_water_leak_admin,odoo19.fuites.admin,model_odoo19_fuites,base.group_system,1,1,1,1
 access_water_leak_operator,odoo19.fuites.operator,model_odoo19_fuites,odoo19_fuites.group_operator,1,1,1,1
 access_water_leak_technician,odoo19.fuites.technician,model_odoo19_fuites,odoo19_fuites.group_technician,1,0,0,0

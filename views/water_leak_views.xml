@@ -34,6 +34,6 @@
     <field name="view_mode">list,form</field>
   </record>
 
-  <menuitem id="menu_water_leak_root" name="Fuites d’eau" groups="odoo19_fuites.group_operator,odoo19_fuites.group_technician"/>
-  <menuitem id="menu_water_leak" name="Déclarations" parent="menu_water_leak_root" action="action_water_leak" groups="odoo19_fuites.group_operator,odoo19_fuites.group_technician"/>
+  <menuitem id="menu_water_leak_root" name="Fuites d’eau"/>
+  <menuitem id="menu_water_leak" name="Déclarations" parent="menu_water_leak_root" action="action_water_leak" />
 </odoo>
