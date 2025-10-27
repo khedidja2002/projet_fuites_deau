@@ -26,7 +26,7 @@
                   <td><t t-esc="dict(leak._fields['leak_type'].selection).get(leak.leak_type)"/></td>
                   <td><t t-esc="leak.report_datetime"/></td>
                   <td><t t-esc="leak.address"/></td>
-                   <td><t t-esc="leak.photo"/></td>
+                  <td><t t-esc="leak.photo"/></td>
                 </tr>
               </t>
             </tbody>

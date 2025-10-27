@@ -10,7 +10,7 @@
           <field name="report_datetime"/>
           <field name="leak_type"/>
           <field name="address"/>
-          <field name="photo"/>
+          <field name="photo" widget="image"/>
         </group>
       </form>
     </field>
