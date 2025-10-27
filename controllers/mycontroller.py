@@ -6,9 +6,9 @@ class WaterLeakController(http.Controller):
 
     @http.route('/water', auth='public', website=True)
     def web_por(self, **kwargs):
-        leaks = request.env['odoo19.fuites'].sudo().search([])
+        fuites = request.env['odoo19.fuites'].sudo().search([])
         return request.render('odoo19.fuites.technician_leaks_page', {
-            'leaks': leaks
+            'leaks': fuites
         })
 
     @http.route('/api/water', auth='public', type='json')

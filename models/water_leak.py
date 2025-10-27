@@ -1,6 +1,6 @@
 from odoo import models, fields
 
-class WaterLeakReport(models.Model):
+class WaterLeakModel(models.Model):
     _name = 'odoo19.fuites'
     _description = 'Declaration de fuite deau'
 
