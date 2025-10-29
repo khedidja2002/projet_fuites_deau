@@ -6,7 +6,7 @@
       <div class="container mt16">
         <h1>Déclarations de fuites</h1>
         <t t-if="not request.env.user.has_group('odoo19_fuites.group_technician')">
-          <div class="alert alert-danger">Accès réservé aux techniciens.</div>
+          <div class="alert alert-danger">Acces réservé aux techniciens.</div>
         </t>
         <t t-else="">
           <table class="table table-striped">

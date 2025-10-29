@@ -19,7 +19,7 @@
   </record>
 
   <record id="rule_water_leak_technician_read_all" model="ir.rule">
-    <field name="name">Fuite deau : technicien tout lire</field>
+    <field name="name">Fuite deau: technicien tout lire</field>
     <field name="model_id" ref="model_odoo19_fuites"/>
     <field name="domain_force">[]</field>
     <field name="perm_read" eval="True"/>
