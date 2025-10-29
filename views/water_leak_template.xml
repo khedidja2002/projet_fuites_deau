@@ -5,7 +5,7 @@
     <t t-call="website.layout">
       <div class="container mt16">
         <h1>Déclarations de fuites</h1>
-        <t t-if="not request.env.user.has_group('odoo19_fuites.group_technician')">
+        <t t-if="not (request.env.user.has_group('odoo19_fuites.group_technician') or request.env.user.has_group('base.group_system'))">
           <div class="alert alert-danger">Acces réservé aux techniciens.</div>
         </t>
         <t t-else="">

@@ -26,5 +26,4 @@ class WaterLeakController(http.Controller):
         return Response(
                 json.dumps({"result": result}, default=str),
                 content_type='application/json',
-                status=200
             )
