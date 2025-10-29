@@ -11,7 +11,7 @@ class WaterLeakController(http.Controller):
             'leaks': fuites
         })
 
-    @http.route('/api/water', auth='public', type='json')
+    @http.route('/api/water', auth='public', type='http')
     def api_leaks(self, **kwargs):
         leaks = request.env['odoo19.fuites'].sudo().search([])
         result = []
@@ -22,5 +22,9 @@ class WaterLeakController(http.Controller):
                 'leak_type': leak.leak_type,
                 'address': leak.address,
                 'photo': leak.photo,
-            })
-        return result
+            }) 
+        print("############")     
+        print(type(result))
+        test=json.dumps({"result":result})
+        print(type(test))
+        return {"hello":"hello"}
