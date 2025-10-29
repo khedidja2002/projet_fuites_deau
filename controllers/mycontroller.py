@@ -1,5 +1,5 @@
 from odoo import http
-from odoo.http import request
+from odoo.http import request , Response
 import json
 
 class WaterLeakController(http.Controller):
@@ -11,7 +11,7 @@ class WaterLeakController(http.Controller):
             'leaks': fuites
         })
 
-    @http.route('/api/water', auth='public', type='http')
+    @http.route('/api/water', auth='public', type='http', methods=['GET'], csrf=False)
     def api_leaks(self, **kwargs):
         leaks = request.env['odoo19.fuites'].sudo().search([])
         result = []
@@ -23,8 +23,8 @@ class WaterLeakController(http.Controller):
                 'address': leak.address,
                 'photo': leak.photo,
             }) 
-        print("############")     
-        print(type(result))
-        test=json.dumps({"result":result})
-        print(type(test))
-        return {"hello":"hello"}
+        return Response(
+                json.dumps({"result": result}, default=str),
+                content_type='application/json',
+                status=200
+            )
